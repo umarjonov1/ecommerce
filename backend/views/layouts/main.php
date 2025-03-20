@@ -52,7 +52,7 @@ AppAsset::register($this);
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="<?php echo \yii\helpers\Url::to(['/product/index'])?>" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Products</span>
@@ -317,7 +317,9 @@ AppAsset::register($this);
                 </nav>
                 <!-- End of Topbar -->
 
-                <?php echo $content ?>
+                <div class="p-5">
+                    <?php echo $content ?>
+                </div>
             </div>
             <!-- End of Main Content -->
 
