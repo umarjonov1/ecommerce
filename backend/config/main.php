@@ -12,8 +12,13 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log'],
-    'modules' => [],
+    'bootstrap' => ['gii'],
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module',
+            'allowedIPs' => ['127.0.0.1', '::1'], // Разрешенные IP
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
@@ -43,15 +48,15 @@ return [
             'bundles' => [
 
             ]
-        ]
-        /*
+        ],
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
